@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "project": "FNF VS Missasinfonia v3",
+  "repository": "https://github.com/mariojr1317/idk2",
+  "workingBranch": "port/missasinfonia-v3-html5",
+  "state": "audit_only_not_playable_port",
+  "sourceArchive": "fnf_vs_missasinfonia_v3_fe527.zip",
+  "archive": {
+    "entriesIncludingDirectories": 886,
+    "files": 809,
+    "uncompressedBytes": 217551643,
+    "approximateUncompressedMB": 217.6
+  },
+  "sourceFolders": {
+    "images": 340,
+    "data": 127,
+    "custom_events": 125,
+    "stages": 59,
+    "characters": 55,
+    "songs": 40,
+    "scripts": 13,
+    "sounds": 13,
+    "weeks": 10,
+    "videos": 9,
+    "music": 6,
+    "fonts": 3,
+    "shaders": 3,
+    "custom_notetypes": 2,
+    "metadata_and_other": 4
+  },
+  "fileExtensions": {
+    ".png": 241,
+    ".lua": 178,
+    ".json": 150,
+    ".txt": 88,
+    ".xml": 83,
+    ".ogg": 56,
+    ".mp4": 8,
+    ".ttf": 2,
+    ".frag": 2,
+    ".hx": 1
+  },
+  "targetRepoFindings": {
+    "entrypoint": "index.html",
+    "compiledRuntime": "PsychEngine.js",
+    "manifests": [
+      "manifest/default.json",
+      "manifest/shared.json",
+      "manifest/songs.json",
+      "manifest/videos.json"
+    ],
+    "webAssetsRoot": "assets/",
+    "sourceProjectFilesFoundAtRoot": {
+      "Project.xml": false,
+      "haxelib.json": false
+    }
+  },
+  "proposedAssetPathMappingForReview": {
+    "characters/*.json": "assets/characters/",
+    "data/<song>/*": "assets/data/<song>/",
+    "images/*": "assets/images/",
+    "songs/<song>/*": "assets/songs/<song>/",
+    "sounds/*": "assets/sounds/",
+    "stages/*": "assets/stages/",
+    "videos/*": "assets/videos/",
+    "weeks/*": "assets/weeks/",
+    "music/*": "assets/music/",
+    "fonts/*": "assets/fonts/",
+    "shaders/*": "assets/shaders/"
+  },
+  "blockers": [
+    "The source export is compiled JS and no Haxe/OpenFL project source was identified at repository root.",
+    "The web runtime uses generated asset manifests; adding files alone is not proven to make them load.",
+    "Existing web songs are listed as MP3 in manifest/songs.json, while the mod source includes OGG.",
+    "The mod includes 178 Lua scripts, a Haxe script, custom events and custom note types; browser compatibility must be audited.",
+    "The mod includes character names such as bf and gf that could collide with base-game files if flattened into assets/.",
+    "The GitHub connector available for this task can create/edit text files but does not expose a bulk binary-upload operation for the ZIP's 217.6 MB of resources."
+  ]
+}
