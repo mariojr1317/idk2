@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "project": "FNF VS Missasinfonia v3",
+  "sourceArchive": "fnf_vs_missasinfonia_v3_fe527.zip",
+  "state": "static_source_audit_not_runtime_tested",
+  "validation": {
+    "jsonFilesDetected": 150,
+    "jsonFilesValid": 150,
+    "jsonFilesInvalid": 0,
+    "note": "JSON syntax parsed successfully; this does not validate Psych Engine schema or game references."
+  },
+  "compatibilityFlags": [
+    {
+      "feature": "Haxe evaluation",
+      "count": 7,
+      "files": [
+        "custom_events/Chromatic Aberration.lua",
+        "data/Aqui_estoy/shader.lua",
+        "data/Goodfun/shader.lua",
+        "data/Grape_soda/shader.lua",
+        "scripts/changeWindowsStuff.lua",
+        "scripts/ghostEffect.lua",
+        "scripts/Stage Change Manager.lua"
+      ],
+      "action": "Check whether this HTML5 build exposes runHaxeCode. Replace or disable unsupported code only after reviewing what gameplay behavior it controls."
+    },
+    {
+      "feature": "Haxe library imports",
+      "count": 2,
+      "files": [
+        "custom_events/Chromatic Aberration.lua",
+        "scripts/changeWindowsStuff.lua"
+      ],
+      "action": "These depend on Haxe/OpenFL APIs; verify the exported runtime includes them."
+    },
+    {
+      "feature": "Class-level property access",
+      "count": 7,
+      "files": [
+        "custom_events/Change Scrolltype.lua",
+        "custom_events/zCameraFix.lua",
+        "data/Aqui_estoy/subtitulos.lua",
+        "data/Cancion_al_Mar/subtitulos.lua",
+        "scripts/acurracyratingthingy.lua",
+        "scripts/Stage Change Manager.lua",
+        "stages/Barrio.lua"
+      ],
+      "action": "Test these against the exact HTML5 export. Some references to classes or fields may differ or be unavailable."
+    },
+    {
+      "feature": "Class-level property mutation",
+      "count": 10,
+      "files": [
+        "custom_events/zCameraFix.lua",
+        "data/Aqui_estoy/middlescroll.lua",
+        "data/Cancion_al_Mar/middlescroll.lua",
+        "data/determinacion/middlescroll.lua",
+        "data/Ignt-Ms/middlescroll.lua",
+        "data/rap_kirby/middlescroll.lua",
+        "data/rap_mario_3/middlescroll.lua",
+        "scripts/acurracyratingthingy.lua",
+        "scripts/changeWindowsStuff.lua",
+        "scripts/Stage Change Manager.lua"
+      ],
+      "action": "Verify the target engine's Lua bridge supports every class and field used."
+    },
+    {
+      "feature": "Runtime shaders",
+      "count": 5,
+      "files": [
+        "custom_events/Chromatic Aberration.lua",
+        "custom_events/Missingno.lua",
+        "data/Aqui_estoy/shader.lua",
+        "data/Goodfun/shader.lua",
+        "data/Grape_soda/shader.lua"
+      ],
+      "action": "Check WebGL shader support and shader loading paths; compile/runtime shader support can differ between desktop and HTML5."
+    },
+    {
+      "feature": "Video playback",
+      "count": 9,
+      "files": [
+        "custom_events/video.lua",
+        "data/Billy/video solo.lua",
+        "data/Goodfun/video solo.lua",
+        "data/Lyrics/video y dialogo.lua",
+        "data/otomatone/video y dialogo.lua",
+        "data/Pizza/video solo.lua",
+        "data/rock_time/video solo.lua",
+        "data/wizard/video solo.lua",
+        "scripts/VideoSpriteHandler.hx"
+      ],
+      "action": "The custom Haxe video sprite handler imports hxcodec and uses FileSystem. A web-compatible video implementation may be required; test each affected song/cutscene."
+    },
+    {
+      "feature": "Window/system APIs",
+      "count": 2,
+      "files": [
+        "scripts/changeWindowsStuff.lua",
+        "scripts/VideoSpriteHandler.hx"
+      ],
+      "action": "The desktop window-title/icon code is not meaningful in a normal browser tab and should be skipped or replaced for HTML5."
+    }
+  ],
+  "overall": "No scripts were changed or silently removed by this audit. Compatibility status requires runtime tests after the assets are imported into the actual HTML5 asset pipeline."
+}
